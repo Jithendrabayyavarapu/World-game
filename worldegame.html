@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="worldegame.css">
+    <title>Word Game</title>
+    <style>
+        /* Your CSS styles go here */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .box {
+            display: flex;
+            flex-direction: row;
+            margin-left: 1px;
+        }
+
+        .box00 {
+            position: absolute;
+            left: 40%;
+            top: 30%;
+        }
+
+        .box1 {
+            border: 1px solid black;
+            text-align: center;
+            height: 30px;
+            width: 25px;
+            margin: 2px;
+            font-size: 1.4rem;
+            cursor: pointer;
+        }
+
+        .box12,
+        .box13,
+        .box14 {
+            display: flex;
+            flex-direction: row;
+        }
+    </style>
+</head>
+<body>
+    <div class="box00">
+        <div class="box" id="word-container"></div>
+        <button onclick="resetGame()">Reset</button>
+    </div>
+
+    <script>
+        // Get the word and split it into an array of characters
+        const word = "HELLO INDIA BRIEF";
+        const wordArray = word.split('');
+
+        // Get the word container element
+        const wordContainer = document.getElementById('word-container');
+
+        // Function to populate the letter boxes with the initial word
+        function populateWord() {
+            wordContainer.innerHTML = '';
+            wordArray.forEach(letter => {
+                const letterBox = document.createElement('div');
+                letterBox.classList.add('box1');
+                letterBox.textContent = letter;
+                letterBox.onclick = () => handleGuess(letter);
+                wordContainer.appendChild(letterBox);
+            });
+        }
+
+        // Function to handle user guesses
+        function handleGuess(letter) {
+            alert(`You guessed: ${letter}`);
+            // Add your game logic here
+        }
+
+        // Function to reset the game
+        function resetGame() {
+            populateWord();
+        }
+
+        // Initialize the game
+        populateWord();
+    </script>
+</body>
+</html>

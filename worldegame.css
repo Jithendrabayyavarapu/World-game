@@ -1,0 +1,37 @@
+*{
+    margin:0px;
+    padding:0px;
+    box-sizing: border-box;
+}
+.box{
+    display:flex;
+    flex-direction: row;
+    
+    margin-left: 1px;
+    /* border: 1px solid black; */   
+}
+.box00{
+    position: absolute;
+    left:40%;
+    top:30%;
+}
+.box1{
+    border: 1px solid black;
+    text-align: center;
+    height: 30px;
+    width:25px;
+    margin:2px;
+    font-size: 1.4rem;
+}
+.box12{
+    display:flex;
+    flex-direction: row;
+}
+.box13{
+    display:flex;
+    flex-direction: row;
+}
+.box14{
+    display:flex;
+    flex-direction: row;
+}
